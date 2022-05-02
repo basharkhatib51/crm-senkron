@@ -1,0 +1,9 @@
+$theme-colors: (
+    "primary": #E91C26,
+    "danger": #E91C26,
+);
+$primary: #E91C26;
+@import "../bootstrap/css/bootstrap";
+
+@import "../css/app.scss";
+@import "../css/infinite-slider.css";

@@ -1,0 +1,160 @@
+<template>
+  <div>
+    <b-row
+      v-if="data.counts"
+      class="mt-3"
+    >
+      <b-col
+        cols="12"
+        sm="6"
+        md="4"
+        lg="3"
+      >
+        <statistic-card-with-area-chart
+          class="font-medium-4"
+          icon="UserIcon"
+          :statistic="data.counts.users_count"
+          :statistic-title="$t('Users')"
+          :chart-data="[data.users]"
+        />
+      </b-col>
+      <b-col
+        cols="12"
+        sm="6"
+        md="4"
+        lg="3"
+      >
+        <statistic-card-with-area-chart
+          class="font-medium-4"
+          icon="HashIcon"
+          :statistic="data.counts.tags_count"
+          :statistic-title="$t('Tags')"
+          :chart-data="[data.tags]"
+        />
+      </b-col>
+      <b-col
+        cols="12"
+        sm="6"
+        md="4"
+        lg="3"
+      >
+        <statistic-card-with-area-chart
+          class="font-medium-4"
+          icon="PackageIcon"
+          :statistic="data.counts.products_count"
+          :statistic-title="$t('Products')"
+          :chart-data="[data.products]"
+        />
+      </b-col>
+      <b-col
+        cols="12"
+        sm="6"
+        md="4"
+        lg="3"
+      >
+        <statistic-card-with-area-chart
+          class="font-medium-4"
+          icon="CopyIcon"
+          :statistic="data.counts.categories_count"
+          :statistic-title="$t('Categories')"
+          :chart-data="[data.categories]"
+        />
+      </b-col>
+      <b-col
+        cols="12"
+        sm="6"
+        md="4"
+        lg="3"
+      >
+        <statistic-card-with-area-chart
+          class="font-medium-4"
+          icon="GlobeIcon"
+          :statistic="data.counts.languages_count"
+          :statistic-title="$t('Languages')"
+          :chart-data="[data.languages]"
+        />
+      </b-col>
+      <b-col
+        cols="12"
+        sm="6"
+        md="4"
+        lg="3"
+      >
+        <statistic-card-with-area-chart
+          class="font-medium-4"
+          icon="ImageIcon"
+          :statistic="data.counts.sliders_count"
+          :statistic-title="$t('Sliders')"
+          :chart-data="[data.sliders]"
+        />
+      </b-col>
+      <b-col
+        cols="12"
+        sm="6"
+        md="4"
+        lg="3"
+      >
+        <statistic-card-with-area-chart
+          class="font-medium-4"
+          icon="BoxIcon"
+          :statistic="data.counts.sections_count"
+          :statistic-title="$t('Sections')"
+          :chart-data="[data.sections]"
+        />
+      </b-col>
+      <b-col
+        cols="12"
+        sm="6"
+        md="4"
+        lg="3"
+      >
+        <statistic-card-with-area-chart
+          class="font-medium-4"
+          icon="MenuIcon"
+          :statistic="data.counts.menus_count"
+          :statistic-title="$t('Menus')"
+          :chart-data="[data.menus]"
+        />
+      </b-col>
+      <b-col
+        cols="12"
+        sm="6"
+        md="4"
+        lg="3"
+      >
+        <statistic-card-with-area-chart
+          class="font-medium-4"
+          icon="LayoutIcon"
+          :statistic="data.counts.pages_count"
+          :statistic-title="$t('Pages')"
+          :chart-data="[data.pages]"
+        />
+      </b-col>
+      <b-col cols="12">
+        <span class="text-danger">NOTE :</span>   <span class="text-primary">the area chart shows only current year statistics</span>
+      </b-col>
+    </b-row>
+  </div>
+
+</template>
+<script>
+import Vue from 'vue'
+import StatisticCardWithAreaChart from '@core/components/statistics-cards/StatisticCardWithAreaChart.vue'
+
+export default {
+  components: {
+    StatisticCardWithAreaChart,
+  },
+  data() {
+    return {
+      data: {},
+    }
+  },
+  created() {
+    Vue.prototype.$http.get('analytics').then(response => {
+      this.data = response.data.data
+    })
+  },
+
+}
+</script>

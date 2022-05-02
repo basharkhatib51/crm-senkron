@@ -1,0 +1,164 @@
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: unset;
+}
+
+.text-light a {
+    color: #fff;
+}
+
+.app-navbar {
+    background: url('../images/navbar.png') no-repeat top;
+    background-size: 100% 31%;
+    position: absolute;
+}
+
+.app-navbar-sm {
+    background: url('../images/navbar.png') no-repeat top;
+    background-size: 100% 100%;
+}
+
+.app-navbar-sm .menu-button {
+    font-size: 40px;
+}
+
+.logo {
+    width: 200px;
+}
+
+.nav-bar-menus {
+
+    background-image: url('../images/menu.png');
+    background-size: 100% 100%;
+}
+
+.nav-bar-menu > .col a {
+    border-radius: 10px;
+    color: white;
+    transition: all 0.4s;
+    padding-right: 0.7rem !important;
+    padding-left: 0.7rem !important;
+}
+
+.nav-bar-menu > .col a:hover {
+    background-color: #ffffff66;
+    color: #ffffff;
+}
+
+.nav-bar-menu > .col a.active {
+    background-color: white;
+    color: #dc3545;
+}
+
+.slider {
+
+    background-image: url(../images/slider.png);
+    /*background-size: 100% auto;*/
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.slider .title {
+    margin: 10% 0px;
+}
+
+.slider .play {
+    width: 150px;
+    /*box-shadow: 0px 0px 0px 0px #ffffff00;*/
+    box-shadow: 0 0 0 0 rgba(256, 0, 0, 0.4);
+    border-radius: 100px;
+    transition: all 1s;
+    animation: play-shadow 1s infinite;
+}
+
+@keyframes play-shadow {
+    0% {
+        -moz-box-shadow: 0 0 0 0 rgba(256, 0, 0, 0.4);
+        box-shadow: 0 0 0 0 rgba(256, 0, 0, 0.4);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba(256, 0, 0, 0);
+        box-shadow: 0 0 0 10px rgba(256, 0, 0, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(256, 0, 0, 0);
+        box-shadow: 0 0 0 0 rgba(256, 0, 0, 0);
+    }
+}
+
+.slider .play:hover {
+    transform: rotate(228deg);
+    animation: none;
+}
+
+.slider .min-play {
+    width: 100px;
+}
+
+
+.slider .controls {
+    padding: 6px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 7%);
+    width: max-content;
+}
+
+.slider .controls a {
+    border-radius: 100%;
+    border: 1px solid #707070;
+    color: #707070;
+    margin-right: 3px;
+    margin-left: 3px;
+    padding: 5px;
+    padding-right: 10px;
+    transition: all 0.5s;
+    padding-left: 10px;
+}
+
+.slider .controls a:hover {
+    border: 1px solid #dc3545;
+    color: #dc3545;
+}
+
+
+.slider .controls a.active {
+    color: #dc3545;
+}
+
+.slider-elements {
+    position: absolute;
+    transform: rotate(9deg);
+    transform-origin: left;
+    top: -77px;
+}
+
+.cutter {
+    width: 100%;
+}
+
+.test {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 50px solid #555;
+}
+
+.mobil-menu {
+    right: -100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    transition:  all 1s ;
+}
+.mobil-menu.open {
+    right: 0;
+}
+
